@@ -1,6 +1,7 @@
 import { default as React, PropTypes } from 'react'
 
-const IconBase = ({ children, color, size, style, ...props }, { reactIconBase = {} }) => {
+const IconBase = ({ children, color, size, style, ...props }, context) => {
+  let reactIconBase = context && context.reactIconBase || {}
   const computedSize = size || reactIconBase.size || '1em'
   return (
     <svg
